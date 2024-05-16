@@ -10,6 +10,19 @@ Flavor Finder is an Android app designed to help users discover and save their f
 - **Shopping List**: Generate a shopping list based on the ingredients required for your selected recipes.
 - **Sign In with Google**: Seamlessly sign in using your Google account to access personalized features and save your preferences.
 
+## Used Technologies
+
+- Android SDK
+- Kotlin
+- Java
+- Google Play services authentication
+- RecyclerView
+- CardView
+- Picasso
+- Retrofit
+  
+
+
 ## Installation
 
 To install Flavor Finder on your Android device, follow these steps:
