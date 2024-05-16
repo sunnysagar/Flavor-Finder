@@ -2,7 +2,7 @@
 
 Flavor Finder is an Android app designed to help users discover and save their favorite recipes. With Flavor Finder, you can explore a wide variety of recipes, view detailed instructions, and manage your shopping list.
 
-## Apk file link [link](`https://github.com/sunnysagar/Flavor-Finder/blob/master/base.apk`)
+## Apk file [link](https://github.com/sunnysagar/Flavor-Finder/blob/master/base.apk)
 
 ## Features
 
