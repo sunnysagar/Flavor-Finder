@@ -28,5 +28,7 @@ To install Flavor Finder on your Android device, follow these steps:
 - Google Play services authentication: `com.google.android.gms:play-services-auth:21.1.1`
 - RecyclerView: `androidx.recyclerview:recyclerview:1.2.1`
 - CardView: `androidx.cardview:cardview:1.0.0`
+- Picasso: `com.squareup.picasso:picasso:2.71828`
+- Retrofit: `com.squareup.retrofit2:retrofit:2.9.0`
 - ...
 
