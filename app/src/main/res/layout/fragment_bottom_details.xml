@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomTop"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_sheet_background"
+    tools:context=".fragment.BottomRecipeDetailsFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backToHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/arrow_left_circle"
+            android:layout_alignParentStart="true"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/recipeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/backToHome"
+            android:layout_centerInParent="true"
+            android:padding="5dp"
+            android:layout_marginStart="8dp"
+            android:text=""
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/fabRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_otlined"
+            android:layout_centerInParent="true"
+            android:layout_alignParentEnd="true"
+            android:padding="5dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/imageLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/recipeImage"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="4dp"
+                android:background="@drawable/border_shape"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textView_time1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="Ready in"
+                    android:textColor="#353434"
+                    android:textStyle="normal"/>
+                <TextView
+                    android:id="@+id/recipeMealTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/orange"
+                    android:text="25 min"
+                    android:padding="8dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="4dp"
+                android:background="@drawable/border_shape"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/imageView_serving"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Servings"
+                    android:textSize="16sp"
+                    android:textColor="#353434"
+                    android:textStyle="normal"/>
+                <TextView
+                    android:id="@+id/recipeMealServing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/orange"
+                    android:text="6"
+                    android:padding="8dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="4dp"
+                android:background="@drawable/border_shape"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/imageView_likes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="Price/serving"
+                    android:textColor="#353434"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/recipeMealPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/orange"
+                    android:text="156"
+                    android:padding="8dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnIngredients"
+            android:layout_width="335dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="55dp"
+            android:text="Get Ingredient  >"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/orange"
+            android:visibility="visible"
+            android:padding="8dp"
+            android:layout_margin="16dp"
+            />
+
+    </LinearLayout>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/ingredientsLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/ingreRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/recipeMealIngredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Ingredients"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/IngredientsDropdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="5dp"
+                    android:padding="8dp"
+                    android:src="@drawable/arrow_drop_down"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recipeRecyclerMealIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:visibility="visible" />
+
+
+
+            <Button
+                android:id="@+id/btnFullDetail"
+                android:layout_width="335dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/orange"
+                android:padding="8dp"
+                android:text="Get Full Recipe  >"
+                android:textColor="@color/white"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/detail_n_Similar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/fullRecipeRL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:text="Full Recipe"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/recipeDropdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="5dp"
+                android:padding="8dp"
+                android:src="@drawable/arrow_drop_down" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/fullRecipeSV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView_meal_equipement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Equiments"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recipeRecyclerMealEquipment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Quick Summary"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/RecipeMealSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Summary"
+                    android:textColor="@color/black"
+                    android:textStyle="normal" />
+
+                <LinearLayout
+                    android:id="@+id/nutritionLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/nutri"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="#F2F7FD"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/textView_nutrition"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Nutrition"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/nutriDropdown1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="5dp"
+                            android:src="@drawable/dropdown"
+                            android:visibility="visible" />
+
+                        <ImageView
+                            android:id="@+id/nutriDropup1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="5dp"
+                            android:src="@drawable/dropup"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/recipeMealNutrition"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_nutrition"
+                            android:layout_marginTop="5dp"
+                            android:text="Nutrition goes here"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/badNutri"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="#F2F7FD"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/textView_bad_nutrition"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Bad for health nutrition"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/nutriBadDropdown1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="5dp"
+                            android:src="@drawable/dropdown"
+                            android:visibility="visible" />
+
+                        <ImageView
+                            android:id="@+id/nutriBadDropup1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="5dp"
+                            android:src="@drawable/dropup"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/recipeMealBadNutrition"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_bad_nutrition"
+                            android:layout_marginTop="5dp"
+                            android:text="Nutrition goes here"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/goodNutri"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="#F2F7FD"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/textView_good_nutrition"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Good for health nutrition"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/nutriGoodDropdown1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="5dp"
+                            android:src="@drawable/dropdown"
+                            android:visibility="visible" />
+
+                        <ImageView
+                            android:id="@+id/nutriGoodDropup1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="5dp"
+                            android:src="@drawable/dropup"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/recipeMealGoodNutrition"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_good_nutrition"
+                            android:layout_marginTop="5dp"
+                            android:text="Nutrition goes here"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnSimilarRecipe"
+                    android:layout_width="335dp"
+                    android:layout_height="55dp"
+                    android:layout_margin="16dp"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@color/orange"
+                    android:padding="8dp"
+                    android:text="Get Similar Recipe  >"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/similarRecipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/simiRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/recipeSimilar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Similar Recipe"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/similarRecipeDropdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="5dp"
+                    android:padding="8dp"
+                    android:src="@drawable/arrow_drop_down"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/similarRecipeRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

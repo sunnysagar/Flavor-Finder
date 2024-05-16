@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.RecipeDetailsFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/homeBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_back"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:padding="5dp"/>
+
+        <ImageView
+            android:id="@+id/savefab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_otlined"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="8dp"
+            android:padding="5dp"/>
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView_meal_image"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginBottom="2dp"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/textView_meal_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="Recipe Name"
+        android:textColor="@color/black"
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/border_shape"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/textView_time1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="Ready in"
+                        android:textColor="#353434"
+                        android:textStyle="normal"/>
+                    <TextView
+                        android:id="@+id/textView_meal_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/orange"
+                        android:text="25 min"
+                        android:padding="8dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/border_shape"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/imageView_serving"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Servings"
+                        android:textSize="16sp"
+                        android:textColor="#353434"
+                        android:textStyle="normal"/>
+                    <TextView
+                        android:id="@+id/textView_meal_serving"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/orange"
+                        android:text="6"
+                        android:padding="8dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/border_shape"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/imageView_likes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="Price/serving"
+                        android:textColor="#353434"
+                        android:textStyle="normal" />
+                    <TextView
+                        android:id="@+id/textView_meal_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/orange"
+                        android:text="156"
+                        android:padding="8dp"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/textView_meal_ingredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Ingredients"
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="8dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_meal_ingredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"/>
+
+            <TextView
+                android:id="@+id/textView_meal_equipement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Equiments"
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="8dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_meal_equipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Quick Summary"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="8dp"/>
+
+
+            <TextView
+                android:id="@+id/textView_meal_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Summary"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_margin="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/nutritionLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/nutri"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F2F7FD"
+                    android:layout_marginTop="5dp"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/textView_nutrition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nutrition"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"/>
+
+                    <ImageView
+                        android:id="@+id/nutriDropdown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/dropdown"
+                        android:layout_alignParentEnd="true"
+                        android:visibility="visible"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:id="@+id/nutriDropup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/dropup"
+                        android:layout_alignParentEnd="true"
+                        android:visibility="gone"
+                        android:layout_marginEnd="5dp"/>
+
+                    <TextView
+                        android:id="@+id/textView_meal_nutrition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_nutrition"
+                        android:visibility="gone"
+                        android:text="Nutrition goes here"
+                        android:textColor="@color/black"
+                        android:textStyle="normal"
+                        android:layout_marginTop="5dp"
+                        android:textSize="14sp"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/badNutri"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F2F7FD"
+                    android:layout_marginTop="8dp"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/textView_bad_nutrition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bad for health nutrition"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"/>
+
+                    <ImageView
+                        android:id="@+id/nutriBadDropdown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/dropdown"
+                        android:layout_alignParentEnd="true"
+                        android:visibility="visible"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:id="@+id/nutriBadDropup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/dropup"
+                        android:layout_alignParentEnd="true"
+                        android:visibility="gone"
+                        android:layout_marginEnd="5dp"/>
+
+                    <TextView
+                        android:id="@+id/textView_meal_bad_nutrition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_bad_nutrition"
+                        android:visibility="gone"
+                        android:text="Nutrition goes here"
+                        android:textColor="@color/black"
+                        android:textStyle="normal"
+                        android:layout_marginTop="5dp"
+                        android:textSize="14sp"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/goodNutri"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F2F7FD"
+                    android:layout_marginTop="8dp"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/textView_good_nutrition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Good for health nutrition"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"/>
+
+                    <ImageView
+                        android:id="@+id/nutriGoodDropdown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/dropdown"
+                        android:layout_alignParentEnd="true"
+                        android:visibility="visible"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:id="@+id/nutriGoodDropup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/dropup"
+                        android:layout_alignParentEnd="true"
+                        android:visibility="gone"
+                        android:layout_marginEnd="5dp"/>
+
+                    <TextView
+                        android:id="@+id/textView_meal_good_nutrition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_good_nutrition"
+                        android:visibility="gone"
+                        android:text="Nutrition goes here"
+                        android:textColor="@color/black"
+                        android:textStyle="normal"
+                        android:layout_marginTop="5dp"
+                        android:textSize="14sp"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

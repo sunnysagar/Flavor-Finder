@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/logo_img"
+    tools:context=".SigninActivity">
+
+
+    <TextView
+        android:id="@+id/textSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textSign1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="189dp"
+        android:text="Welcome to"
+        android:textColor="@color/white"
+        android:textSize="44sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/textSign1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginBottom="135dp"
+        android:layout_above="@id/textview_message"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="45sp"
+        android:textStyle="bold|italic" />
+
+
+    <TextView
+        android:id="@+id/textview_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="92dp"
+        android:text="Please signing to continue"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        android:textStyle="normal" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnGoogle"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        app:cardCornerRadius="14dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/orange">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="46dp"
+            android:src="@drawable/google" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Continue with google"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Flavor Finder</string>
+
+    <!--    <string name="api_key">ee7c8c9a6a544a97b68d7ac6b1102c66</string>-->
+
+    <!--    <string name="api_key">ab86d8eed2ab4a01902ccacac8d5890a</string>-->
+
+    <!--     <string name="api_key">d86e5343a8e34778b826a6da71aeb01e</string>-->
+    <!--        <string name="api_key">462ae2104a4b4ebabc1143388948effc</string>-->
+
+    <string name="api_key">59332cf6292f42c0989ba4b351570b0a</string>
+
+    <string-array name="tags">
+        <item>main course</item>
+        <item>side dish</item>
+        <item>dessert</item>
+        <item>appetizer</item>
+        <item>salad</item>
+        <item>bread</item>
+        <item>breakfast</item>
+        <item>soup</item>
+        <item>beverage</item>
+        <item>sauce</item>
+        <item>marinade</item>
+        <item>fingerfood</item>
+        <item>snack</item>
+        <item>drink</item>
+
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
